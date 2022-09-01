@@ -1,5 +1,6 @@
 # coindesk
 # Java Application to send RESTful API request to the following API endpoint to retrieve the current price of Bitcoin as a JSON array which uses third party dependencies to parse the returned payload and out put the rates to the console display: https://api.coindesk.com/v1/bpi/currentprice.json
+# Watch "Building Java with 3rd Party Dependencies without an IDE" on YouTube by Cruz Macias for help: https://youtu.be/NZZWMr9tmXs
 # How to compile
 ```
 javac -d classes/ -cp lib/json-simple.jar src/coinapp/Main.java -verbose -Xlint:unchecked
