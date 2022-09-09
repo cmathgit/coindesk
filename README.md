@@ -7,7 +7,7 @@ javac -d classes/ -cp lib/json-simple.jar src/coinapp/Main.java -verbose -Xlint:
 
 jar --create --file lib/coinapp.jar -C classes/ .
 ```
-# How to run in Unix / Linux
+# How to run Unix / Linux
 ```
 java -cp lib/coinapp.jar:lib/json-simple.jar coinapp.Main > output.txt
 ```
@@ -43,7 +43,7 @@ PATH=C:\Program Files\Common Files\Oracle\Java\javapath;C:\cygwin64\bin
 user> PATH C:\Program Files\Common Files\Oracle\Java\javapath;C:\cygwin64\bin;C:\Program Files\Java\jdk-18.0.2.1\lib;C:\Program Files\Java\jdk-18.0.2.1\bin
 
 user> PATH
-C:\Program Files\Common Files\Oracle\Java\javapath;C:\cygwin64\bin;C:\Program Files\Java\jdk-18.0.2.1\lib;C:\Program Files\Java\jdk-18.0.2.1\bin
+PATH=C:\Program Files\Common Files\Oracle\Java\javapath;C:\cygwin64\bin;C:\Program Files\Java\jdk-18.0.2.1\lib;C:\Program Files\Java\jdk-18.0.2.1\bin
 ```
 
 # How to compile in Windows (back slash)
