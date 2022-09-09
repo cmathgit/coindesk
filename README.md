@@ -30,6 +30,24 @@ JRE 17+
 https://docs.oracle.com/en/java/javase/18/install/installation-jdk-microsoft-windows-platforms.html#GUID-DAF345BA-B3E7-4CF2-B87A-B6662D691840
 ```
 
+# Update Path Variable in Windows (Access javac, jar, and java commands)
+```
+Option 1. 
+Open the System Properties and add the paths with the javac, jar, and java executables to your PATH environment variable.
+Go to Settings >> System >> About >>  Advanced system settings >> Environment Variables >> System Variables >> Path >> Edit >> New 
+copy the paths, e.g., C:\Program Files\Java\jdk-18.0.2.1\bin, into here.
+
+Option 2. Excute PATH command. Copy the return string (should have a list of paths semi-colon delimited). Append path to JDK binary and library directors separated by a semi-colon, e.g., 
+
+user> PATH
+PATH=C:\Program Files\Common Files\Oracle\Java\javapath;C:\cygwin64\bin
+
+user> PATH C:\Program Files\Common Files\Oracle\Java\javapath;C:\cygwin64\bin;C:\Program Files\Java\jdk-18.0.2.1\lib;C:\Program Files\Java\jdk-18.0.2.1\bin
+
+user> PATH
+C:\Program Files\Common Files\Oracle\Java\javapath;C:\cygwin64\bin;C:\Program Files\Java\jdk-18.0.2.1\lib;C:\Program Files\Java\jdk-18.0.2.1\bin
+```
+
 # How to compile in Windows (back slash)
 ```
 javac -d classes/ -cp lib\json-simple.jar src\coinapp\Main.java -verbose -Xlint:unchecked
@@ -46,9 +64,19 @@ java -cp lib\coinapp.jar;lib\json-simple.jar coinapp.Main > output.txt
 https://repo1.maven.org/maven2/com/googlecode/json-simple/json-simple/1.1.1/json-simple-1.1.1.jar
 ```
 
-#Coindesk BTC API endpoint
+# Adding Maven JSON Simple 1.1.1 (Third Party Package) Repo to your lib directory
+```
+curl -s https://repo1.maven.org/maven2/com/googlecode/json-simple/json-simple/1.1.1/json-simple-1.1.1.jar -o lib\json-simple.jar
+```
+
+# Coindesk BTC API endpoint
 ```
 https://api.coindesk.com/v1/bpi/currentprice.json
+```
+
+# Sending a Request to Coindesk BTC API endpoint and saving the returned payload
+```
+curl -# -o api_payload.json https://api.coindesk.com/v1/bpi/currentprice.json
 ```
 
 # Maven JSON Simple (Third Party Package) Repo
