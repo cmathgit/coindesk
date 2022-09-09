@@ -30,7 +30,7 @@ pause
 
 :: create a jar file and specify the directory where the class files live
 echo create jar files
-"C:\Program Files\Java\jdk-18.0.2\bin\jar.exe" --create --file lib\coinapp.jar -C classes/ .
+jar --create --file lib\coinapp.jar -C classes/ .
 ls lib
 pause
 
