@@ -10,6 +10,7 @@ echo enter to confirm
 pause
 
 rm -f lib\coinapp.jar
+:: rm -f lib\json-simple.jar
 rm -rf classes/*
 rm -f api_payload.json
 
@@ -20,6 +21,13 @@ pause
 curl -# -o api_payload.json https://api.coindesk.com/v1/bpi/currentprice.json
 ls
 pause
+
+:: copy MAVEN repo (third-party dependencies) into lib
+:: echo copying jar files from repo
+:: curl -s https://repo1.maven.org/maven2/com/googlecode/json-simple/json-simple/1.1.1/json-simple-1.1.1.jar -o lib\json-simple.jar
+:: echo lib
+:: ls lib
+:: pause
 
 :: compile the Java program with third-party dependencies (libraries/jar files)
 echo compiling the Java program
@@ -37,5 +45,3 @@ pause
 :: run the program and include dependencies
 java -cp lib\coinapp.jar;lib\json-simple.jar coinapp.Main > output.txt
 pause
-
-
